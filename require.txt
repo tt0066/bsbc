@@ -1,0 +1,10 @@
+opencv-python
+numpy
+PyWavelets
+phe
+json
+pillow
+Flask
+Flask-WTF
+Flask-SQLAlchemy
+SQLAlchemy
