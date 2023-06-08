@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>GLT图像交易系统</title>
+
+    <!-- Le styles -->
+    <link href="../static/homepage/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="../static/homepage/css/layoutit.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+      <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../static/homepage/img/favicon.png">
+
+    <script type="text/javascript" src="../static/homepage/js/jquery-2.0.0.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="http://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+      <![endif]-->
+    <script type="text/javascript" src="../static/homepage/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/homepage/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../static/homepage/js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../static/homepage/js/jquery.htmlClean.js"></script>
+    <script type="text/javascript" src="../static/homepage/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../static/homepage/ckeditor/config.js"></script>
+    <script type="text/javascript" src="../static/homepage/js/scripts.js"></script>
+
+</head>
+
+<body style="min-height: 660px; cursor: auto;" class="edit">
+
+    <!-- 顶部栏 -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="brand" href="#"><img src="../static/homepage/img/ETH1.png" width="15px">图像交易系统<span
+                        class="label">GLT</span></a>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li>
+                            <div class="btn-group">
+                                <span><iframe class="github-btn"
+                                        src="http://ghbtns.com/github-btn.html?user=tt0066&repo=bsbc&type=watch&count=true"
+                                        allowtransparency="true" frameborder="0" scrolling="0" width="80px"
+                                        height="20px"></iframe></span>
+                                <span><iframe class="github-btn"
+                                        src="http://ghbtns.com/github-btn.html?user=tt0066&repo=bsbc&type=fork&count=true"
+                                        allowtransparency="true" frameborder="0" scrolling="0" width="80px"
+                                        height="20px"></iframe></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧边栏 -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="">
+                <div class="sidebar-nav">
+                    <ul class="nav nav-list accordion-group">
+                        <li class="nav-header">
+                            <div class="pull-right popover-info"><i class="icon-question-sign "></i>
+                                <div class="popover fade right">
+                                    <div class="arrow"></div>
+                                    <h3 class="popover-title">帮助</h3>
+                                    <div class="popover-content">查看个人信息</div>
+                                </div>
+                            </div>
+                            <i class="icon-user icon-white"></i> 账户信息
+                        </li>
+                        <li style="display: list-item;" class="rows" id="estRows">
+                            <div class="lyrow ui-draggable">
+                                <div class="preview">
+                                    <p style="color:white">用户名</p>
+                                    <p style="background-color: beige;">{{name}}</p>
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span12 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lyrow ui-draggable">
+                                <div class="preview">
+                                    <p style="color:white">邮箱</p>
+                                    <p style="background-color: beige;">{{email}}</p>
+                                </div>
+                                <div class="view">
+                                    <div class="row-fluid clearfix">
+                                        <div class="span12 column"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <form action="" method="POST">
+                            <div><img width="30px" src="../static/homepage/img/举报.png">
+                                <input type="submit" name="jubao" value="举报盗版文件">
+                            </div>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 自动轮换 -->
+    <form action="{{url_for('uploadfile')}}" method="POST">
+        <div class="view">
+            <div class="carousel slide" id="myCarousel">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                    <li data-slide-to="1" data-target="#myCarousel" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active"> <img alt="" width="2500px" src="../static/homepage/img/1.png">
+                        <div class="carousel-caption" contenteditable="false">
+                            <h4>GLT</h4>
+                            <p>小组成员：关佳旺(G)，梁兆懿(L)，唐顺海(T)</p>
+                        </div>
+                    </div>
+                    <div class="item"> <img alt="" width="2500px" src="../static/homepage/img/1.png">
+                        <div class="carousel-caption" contenteditable="false">
+                            <h4>区块链+数字水印</h4>
+                            <p>保障交易公平性与数据隐私</p>
+                        </div>
+                    </div>
+                </div>
+                <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a> <a data-slide="next"
+                    href="#myCarousel" class="right carousel-control">›</a>
+            </div>
+        </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <div class="hero-unit" contenteditable="false">
+                    <h3>Hello!</h3>
+                    <p>欢迎使用基于数字水印和区块链的图像交易系统，请浏览现有的商品，然后按照步骤提示完成操作。</p>
+                    <!-- <p><a class="btn btn-primary btn-large" href="#">查看更多 »</a></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- 商品展示 -->
+        <div class="flex-container">
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item1</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit1" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item2</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit2" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item3</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit3" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item4</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit4" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item5</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit5" value="点击购买"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item6</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit6" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item7</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit7" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item8</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit8" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item9</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit9" value="点击购买"></li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <ul style="list-style-type:none;padding:0px;margin:0px">
+                    <li style="font-size:35px;color:green;">item10</li>
+                    <br>
+                    <li>这里是对图像的描述</li>
+                    <li>这个图象包含什么内容，可以用来干嘛，应该怎么使用</li>
+                    <br>
+                    <li><span style="color:red;font-weight:bold">价格：</span> 0.001 ether</li>
+                    <li>文件哈希：<span style="font-size:0.5%;color:red">0x3925685356b952</span></li>
+                    <li style="font-size:0.5%;color:red">817bde2013b8dabf67</li>
+                    <li><input type="submit" name="submit10" value="点击购买"></li>
+                </ul>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>

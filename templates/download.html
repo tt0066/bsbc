@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Download Files</title>
+
+    <link rel="stylesheet" href="../static/upload/css/style.css">
+
+</head>
+
+<body>
+
+    <form id="multistepsform" action="{{url_for('files')}}" method="POST" enctype="multipart/form-data">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">下载文件</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">下载文件</h2>
+            <h3 class="fs-subtitle">水印嵌入完毕，请下载文件，用您的私钥解密</h3>
+            <input type="file" name="pubkey" placeholder="" accept=".pub" />
+            <input type="button" name="next" class="next action-button" value="下一步" />
+        </fieldset>
+    </form>
+
+    <script src='../static/upload/js/jquery.min.js'></script>
+    <script src='../static/upload/js/jquery.easing.min.js'></script>
+    <script src="../static/upload/js/script.js"></script>
+
+</body>
+
+</html>

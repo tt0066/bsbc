@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Files</title>
+
+  <link rel="stylesheet" href="../static/upload/css/style.css">
+
+</head>
+
+<body>
+
+  <form id="multistepsform" action="{{url_for('files')}}" method="POST" enctype="multipart/form-data">
+    <!-- progressbar -->
+    <ul id="progressbar">
+      <li class="active">上传公钥</li>
+      <li>上传预设证据</li>
+      <li>上传密文</li>
+
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+      <h2 class="fs-title">上传公钥</h2>
+      <h3 class="fs-subtitle">请生成Paillier密钥对，并将公钥上传。请将文件保存为.pub</h3>
+      <input type="file" name="pubkey" placeholder="" accept=".pub" />
+      <input type="button" name="next" class="next action-button" value="下一步" />
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title">上传预设证据</h2>
+      <h3 class="fs-subtitle">使用您的以太坊地址（用户名）和文件的哈希生成灰度的水印图片，即：text=Address||hash，然后将
+        text直接打印到白色背景图上，请将水印图片的像素大小设为101*101。将灰度图像中
+        像素值小于平均值的像素点位置记录下来，将其保存到文本文档中，然后上传该文本文档。请您使用Arnold置换算法对得到的水印图片进行置乱处理，完成后用同样的方法
+        记录灰度图像中的像素点位置信息，将其保存在文本文档中，然后上传该文本文档。</h3>
+      <input type="file" name="file1" accept=".txt" />
+      <input type="file" name="file2" accept=".txt" />
+      <!-- <input type="file" name="file2" placeholder="Last Name" /> -->
+      <input type="button" name="previous" class="previous action-button" value="上一步" />
+
+      <input type="button" name="next" class="next action-button" value="下一步" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">上传加密数据</h2>
+      <h3 class="fs-subtitle">请将置乱后的水印图像像素值设为101*101，然后对其进行一级harr小波变换处理，将处理后的数据 用公钥加密，然后将加密的数据上传。请将文件保存为.txt
+      </h3>
+      <input type="file" name="encryption" accept=".txt" />
+      <input type="button" name="previous" class="previous action-button" value="上一步" />
+      <!-- <button type="submit" name="submit" class="submit action-button">提交</button> -->
+      <a href="files"><input type="submit" value="提交" /></a>
+    </fieldset>
+  </form>
+
+  <script src='../static/upload/js/jquery.min.js'></script>
+  <script src='../static/upload/js/jquery.easing.min.js'></script>
+  <script src="../static/upload/js/script.js"></script>
+
+</body>
+
+</html>
