@@ -1,4 +1,3 @@
-from lib2to3.pgen2.token import OP
 from flask import Flask, render_template, request, url_for, send_file, redirect
 from flask_wtf import FlaskForm
 import wl
